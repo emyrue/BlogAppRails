@@ -7,10 +7,10 @@ class Like < ActiveRecord::Base
   private
 
   def update_like_counter
-    unless author.likes_counter
-      author.update(likes_counter: 1)
-    else
+    if author.likes_counter
       author.increment!(:likes_counter)
+    else
+      author.update(likes_counter: 1)
     end
   end
 end

@@ -12,10 +12,10 @@ class Post < ActiveRecord::Base
   private
 
   def update_post_counter
-    unless author.posts_counter
-      author.update(posts_counter: 1)
-    else
+    if author.posts_counter
       author.increment!(:posts_counter)
+    else
+      author.update(posts_counter: 1)
     end
   end
 end
