@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
   has_many :likes, dependent: :destroy, foreign_key: 'author_id'
 
   def most_recent_posts
-    Post.where(author_id: id).order(created_at: :desc).limit(3)
+    posts.order('created_at Desc').limit(3)
   end
 end
