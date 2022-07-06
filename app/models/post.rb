@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
-  has_many :comments, dependent: :destroy
-  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy, foreign_key: 'post_id'
+  has_many :likes, dependent: :destroy, foreign_key: 'post_id'
   belongs_to :author, class_name: 'User'
 
   validates :title, presence: true, allow_blank: false, length: { maximum: 250 }
