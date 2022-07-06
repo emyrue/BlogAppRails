@@ -3,6 +3,10 @@ class Post < ActiveRecord::Base
   has_many :likes, dependent: :destroy
   belongs_to :author, class_name: 'User'
 
+  validates :title, presence: true, allow_blank: false, length: { maximum: 250 }
+  validates :comments_counter, presence: true, comparison: { greater_than_or_equal_to: 0 }, numericality: { only_integer: true }
+  validates :likes_counter, presence: true, comparison: { greater_than_or_equal_to: 0 }, numericality: { only_integer: true }
+
   after_save :update_post_counter
 
   def most_recent_comments
@@ -12,10 +16,6 @@ class Post < ActiveRecord::Base
   private
 
   def update_post_counter
-    if author.posts_counter
-      author.increment!(:posts_counter)
-    else
-      author.update(posts_counter: 1)
-    end
+    author.increment!(:posts_counter)
   end
 end

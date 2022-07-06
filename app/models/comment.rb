@@ -7,10 +7,6 @@ class Comment < ActiveRecord::Base
   private
 
   def update_comment_counter
-    if post.comments_counter
-      author.increment!(:comments_counter)
-    else
-      author.update(comments_counter: 1)
-    end
+    post.increment!(:comments_counter)
   end
 end
