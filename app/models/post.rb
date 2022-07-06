@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
-  has_many :comments, class_name: 'Comment', dependent: :destroy
-  has_many :likes, class_name: 'Like', dependent: :destroy
-  belongs_to :author, class_name: 'User', optional: true
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  belongs_to :author, class_name: 'User'
 
   after_save :update_post_counter
 

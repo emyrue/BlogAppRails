@@ -1,6 +1,6 @@
 class Like < ActiveRecord::Base
   belongs_to :author, class_name: 'User'
-  belongs_to :posts, class_name: 'Post'
+  belongs_to :posts
 
   after_save :update_like_counter
 
