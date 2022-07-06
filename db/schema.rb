@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_05_155723) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.binary "photo"
+    t.string "photo"
     t.string "bio"
     t.integer "posts_counter"
     t.datetime "created_at", null: false
