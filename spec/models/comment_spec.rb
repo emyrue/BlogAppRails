@@ -13,7 +13,7 @@ RSpec.describe Comment, type: :model do
     Comment.destroy_all
   end
 
-  it "Comment saves correctly" do
+  it 'Comment saves correctly' do
     expect(@comment.text).to eq 'Well, it\'s a long, long journey'
   end
 

@@ -17,37 +17,37 @@ RSpec.describe Post, type: :model do
     expect(@user.posts_counter).to eq 1
   end
 
-  it "Title should be present" do
+  it 'Title should be present' do
     @post.title = nil
     expect(@post).to_not be_valid
   end
 
   it "Title can't be blank" do
-    @post.title = ""
+    @post.title = ''
     expect(@post).to_not be_valid
   end
 
-  it "Title should be less than or equal to 250 characters" do
+  it 'Title should be less than or equal to 250 characters' do
     @post.title = 'a' * 300
     expect(@post).to_not be_valid
   end
 
-  it "Comments counter should be an integer" do
+  it 'Comments counter should be an integer' do
     @post.comments_counter = 1.5
     expect(@post).to_not be_valid
   end
 
-  it "Comments counter should be greater than or equal to 0" do
+  it 'Comments counter should be greater than or equal to 0' do
     @post.comments_counter = -1
     expect(@post).to_not be_valid
   end
 
-  it "Likes counter should be an integer" do
+  it 'Likes counter should be an integer' do
     @post.likes_counter = 1.5
     expect(@post).to_not be_valid
   end
 
-  it "Likes counter should be greater than or equal to 0" do
+  it 'Likes counter should be greater than or equal to 0' do
     @post.likes_counter = -1
     expect(@post).to_not be_valid
   end
