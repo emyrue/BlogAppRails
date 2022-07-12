@@ -11,5 +11,9 @@ RSpec.describe 'Users', type: :request do
     it "Renders index template" do
       expect(response).to render_template('index')
     end
+
+    it "Has correct placeholder text" do
+      expect(response.find(h1)).to eq "All Users"
+    end
   end
 end

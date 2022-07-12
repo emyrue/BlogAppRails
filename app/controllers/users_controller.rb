@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   def index
-    puts User.all
+    @text = "All Users"
   end
 
   def show
-    puts User.first
+    @text = "Specific User"
   end
 end

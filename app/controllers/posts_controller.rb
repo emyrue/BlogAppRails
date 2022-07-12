@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
   def index
-    puts Post.all
+    @text = "All Posts"
   end
 
   def show
-    puts Post.first
+    @text = "Specific Post"
   end
 end
