@@ -3,17 +3,17 @@ require 'rails_helper'
 RSpec.describe 'Users', type: :request do
   describe 'GET /index' do
     before(:example) { get users_path }
-    
-    it "Successfully gets index" do
+
+    it 'Successfully gets index' do
       expect(response).to have_http_status(:ok)
     end
 
-    it "Renders index template" do
+    it 'Renders index template' do
       expect(response).to render_template('index')
     end
 
-    it "Has correct placeholder text" do
-      expect(response.body).to include("All Users")
+    it 'Has correct placeholder text' do
+      expect(response.body).to include('All Users')
     end
   end
 
@@ -27,16 +27,16 @@ RSpec.describe 'Users', type: :request do
       User.destroy_all
     end
 
-    it "Successfully gets show" do
+    it 'Successfully gets show' do
       expect(response).to have_http_status(:ok)
     end
 
-    it "Renders show template" do
+    it 'Renders show template' do
       expect(response).to render_template('show')
     end
 
-    it "Has correct placeholder text" do
-      expect(response.body).to include("Specific User")
+    it 'Has correct placeholder text' do
+      expect(response.body).to include('Specific User')
     end
   end
 end
