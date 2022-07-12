@@ -11,9 +11,20 @@ RSpec.describe 'Users', type: :request do
     it "Renders index template" do
       expect(response).to render_template('index')
     end
+  end
 
-    it "Has correct placeholder text" do
-      expect(response.find(h1)).to eq "All Users"
+  describe 'GET /show' do
+    before(:example) do
+      @user = User.create(name: 'Bill', photo: 'none', bio: 'I\'m just a Bill. Yes, I\'m only a Bill.')
+      get "#{users_path}/#{@user.id}"
+    end
+
+    it "Successfully gets show" do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it "Renders show template" do
+      expect(response).to render_template('show')
     end
   end
 end
