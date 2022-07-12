@@ -17,6 +17,12 @@ To get a local copy up and running follow these simple example steps.
     - git clone git@github.com:emyrue/BlogAppRails.git
     - cd BlogAppRails
 
+### Running Tests
+
+Run the following commands in your terminal:
+- bundle install
+- rspec
+
 ## Authors
 
 👤 **Author1**
