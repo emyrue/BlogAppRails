@@ -6,6 +6,10 @@ RSpec.describe 'Posts', type: :request do
       @user = User.create(name: 'Bill', photo: 'none', bio: 'I\'m just a Bill. Yes, I\'m only a Bill.')
       get "#{users_path}/#{@user.id}/posts"
     end
+
+    after do
+      User.destroy_all
+    end
     
     it "Successfully gets index" do
       expect(response).to have_http_status(:ok)
@@ -13,6 +17,10 @@ RSpec.describe 'Posts', type: :request do
 
     it "Renders index template" do
       expect(response).to render_template('index')
+    end
+
+    it "Has correct placeholder text" do
+      expect(response.body).to include("All Posts")
     end
   end
   
@@ -22,6 +30,11 @@ RSpec.describe 'Posts', type: :request do
       @post = Post.create(author_id: @user.id, title: 'Hello', text: 'I\'m sitting here on Capitol Hill.')
       get "#{users_path}/#{@user.id}/posts/#{@post.id}"
     end
+
+    after do
+      User.destroy_all
+      Post.destroy_all
+    end
     
     it "Successfully gets show" do
       expect(response).to have_http_status(:ok)
@@ -29,6 +42,10 @@ RSpec.describe 'Posts', type: :request do
 
     it "Renders show template" do
       expect(response).to render_template('show')
+    end
+
+    it "Has correct placeholder text" do
+      expect(response.body).to include("Specific Post")
     end
   end
 end
