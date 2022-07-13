@@ -1,0 +1,46 @@
+.user-container {
+  width: calc(98% - 100px);
+  display: flex;
+  align-items: center;
+  height: 100px;
+  position: relative;
+  padding: 20px;
+  border: 2px solid black;
+}
+
+.bio-container {
+  margin: 20px;
+  border: 2px solid black;
+  padding: 20px;
+}
+
+.bio-heading,
+.post-title {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.post-container {
+  margin: 20px;
+  border: 2px solid black;
+  padding: 20px;
+  position: relative;
+}
+
+.counters {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.all-posts-link {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.all-posts-button {
+  background-color: lightgray;
+  border: 2px solid black;
+  padding: 5px;
+}

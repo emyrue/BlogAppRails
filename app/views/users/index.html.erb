@@ -4,6 +4,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   </head>
   <body>
-    <h1><%= @text %></h1>
+    <% @all_users.each do |user| %>
+      <section class="single-user">
+        <img class="profile-picture" src="<%= user.photo %>" />
+        <a class="user-link" href="users/<%= user.id %>">
+          <button class="user-button">
+            <div class="user-name"><%= user.name %></div>
+            <div class="user-post-counter">Number of Posts: <%= user.posts_counter%></div>
+          </button>
+        </a>
+      </section>
+    <% end %>
   </body>
 </html>

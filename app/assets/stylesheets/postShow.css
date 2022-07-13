@@ -1,0 +1,27 @@
+.post-section {
+  margin: 20px;
+  width: calc(100% - 40px);
+  border: 2px solid black;
+  padding: 20px;
+  position: relative;
+}
+
+.post-section-title {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.post-text {
+  font-size: 18px;
+}
+
+.comments-section {
+  padding: 20px;
+  margin: 20px;
+  border: 2px solid black;
+}
+
+.comments-heading {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
