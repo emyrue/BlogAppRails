@@ -11,7 +11,10 @@
         <div class="user-post-counter">Number of Posts: <%= @user.posts_counter %></div>
       </div>
     </section>
-    <section>Bio: <%= @user.bio %></section>
+    <section class="bio-container">
+    <div class="bio-heading">Bio:</div>
+    <div><%= @user.bio %></div>
+    </section>
     <% @posts.each do |post| %>
       <section>
         <div><%= post.title %></div>
