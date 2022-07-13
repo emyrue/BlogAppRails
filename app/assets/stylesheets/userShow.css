@@ -32,3 +32,15 @@
   bottom: 10px;
   right: 10px;
 }
+
+.all-posts-link {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.all-posts-button {
+  background-color: lightgray;
+  border: 2px solid black;
+  padding: 5px;
+}

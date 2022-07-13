@@ -22,8 +22,8 @@
         <div class="counters">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></div>
       </section>
     <% end %>
-    <a href="<%= params[:id] %>/posts">
-      <button>See all posts</button>
+    <a class="all-posts-link" href="<%= params[:id] %>/posts">
+      <button class="all-posts-button">See all posts</button>
     </a>
   </body>
 </html>
