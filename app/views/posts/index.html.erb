@@ -17,6 +17,7 @@
           <div>
             <div><%= post.title %></div>
             <div><%= post.text %></div>
+            <div>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter%></div>
           </div>
           <div>
             <% @comments = post.most_recent_comments %>
