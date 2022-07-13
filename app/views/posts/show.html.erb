@@ -5,7 +5,7 @@
   </head>
   <body>
     <section>
-      <div><%= @post.title %></div>
+      <div><%= @post.title %> by <%= @user.name %></div>
       <div><%= @post.text %></div>
       <div>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></div>
     </section>
