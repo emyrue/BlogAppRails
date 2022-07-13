@@ -5,7 +5,7 @@
   </head>
   <body>
     <% @all_users.each do |user| %>
-      <section>
+      <section class="single-user">
         <img src="<%= user.photo %>" />
         <a href="users/<%= user.id %>">
           <button>
