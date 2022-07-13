@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @text = 'Specific Post'
+    @post = Post.find(params[:id])
+    @comments = Comment.where(post_id: params[:id])
   end
 end
