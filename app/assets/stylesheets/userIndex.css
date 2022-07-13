@@ -33,7 +33,7 @@ a {
 }
 
 .user-link {
-  width: calc(98% - 100px)
+  width: calc(98% - 100px);
 }
 
 .user-name {
