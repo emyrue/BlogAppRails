@@ -6,11 +6,11 @@
   <body>
     <% @all_users.each do |user| %>
       <section class="single-user">
-        <img src="<%= user.photo %>" />
-        <a href="users/<%= user.id %>">
-          <button>
-            <div><%= user.name %></div>
-            <div>Number of Posts: <%= user.posts_counter%></div>
+        <img class="profile-picture" src="<%= user.photo %>" />
+        <a class="user-link" href="users/<%= user.id %>">
+          <button class="user-button">
+            <div class="user-name"><%= user.name %></div>
+            <div class="user-post-counter">Number of Posts: <%= user.posts_counter%></div>
           </button>
         </a>
       </section>
