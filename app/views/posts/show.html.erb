@@ -7,6 +7,7 @@
     <section>
       <div><%= @post.title %></div>
       <div><%= @post.text %></div>
+      <div>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></div>
     </section>
     <section>
       <% @comments.each do |comment| %>
