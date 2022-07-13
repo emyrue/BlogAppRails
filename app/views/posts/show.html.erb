@@ -4,12 +4,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   </head>
   <body>
-    <section>
-      <div><%= @post.title %> by <%= @user.name %></div>
-      <div><%= @post.text %></div>
-      <div>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></div>
+    <section class="post-section">
+      <div class="post-section-title"><%= @post.title %> by <%= @user.name %></div>
+      <div class="post-text"><%= @post.text %></div>
+      <div class="counters">Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></div>
     </section>
-    <section>
+    <section class="comments-section">
+      <div class="comments-heading">Comments</div>
       <% @comments.each do |comment| %>
         <% @author = User.find(comment.author_id) %>
         <span><%= @author.name %>:</span>
