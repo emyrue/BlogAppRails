@@ -2,6 +2,10 @@
   width: calc(98% - 100px);
   display: flex;
   align-items: center;
+  height: 100px;
+  position: relative;
+  padding: 20px;
+  border: 2px solid black;
 }
 
 .bio-container {
