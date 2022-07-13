@@ -10,7 +10,21 @@
   padding: 20px;
 }
 
-.bio-heading {
+.bio-heading,
+.post-title {
   font-size: 25px;
   margin-bottom: 10px;
+}
+
+.post-container {
+  margin: 20px;
+  border: 2px solid black;
+  padding: 20px;
+  position: relative;
+}
+
+.counters {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
