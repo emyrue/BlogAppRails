@@ -1,0 +1,21 @@
+.post-link {
+  display: block;
+}
+
+.post-button {
+  background: white;
+  margin: 20px;
+  width: calc(100% - 40px);
+  border: 2px solid black;
+  padding: 0;
+}
+
+.post-button:hover {
+  cursor: pointer;
+}
+
+.post-info {
+  padding: 20px;
+  text-align: left;
+  position: relative;
+}
