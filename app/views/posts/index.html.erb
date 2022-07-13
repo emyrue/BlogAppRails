@@ -4,6 +4,31 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   </head>
   <body>
-    <section><%= @user.name %></section>
+    <section>
+      <img src="<%= @user.photo %>" />
+      <div>
+        <div><%= @user.name %></div>
+        <div>Number of Posts: <%= @user.posts_counter %></div>
+      </div>
+    </section>
+    <% @all_posts.each do |post| %>
+      <a href="posts/<%= post.id %>">
+        <button>
+          <div>
+            <div><%= post.title %></div>
+            <div><%= post.text %></div>
+          </div>
+          <div>
+            <% @comments = post.most_recent_comments %>
+            <% @comments.each do |comment| %>
+              <% @author = User.find(comment.author_id) %>
+              <span><%= @author.name %>:</span>
+              <span><%= comment.text %></span><br/>
+            <% end %>
+          </div>
+        </button>
+      </a>
+    <% end %>
+    <button>Pagination</button>
   </body>
 </html>
