@@ -4,11 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   </head>
   <body>
-    <section>
-      <img src="<%= @user.photo %>" />
-      <div>
-        <div><%= @user.name %></div>
-        <div>Number of Posts: <%= @user.posts_counter %></div>
+    <section class="single-user">
+      <img class="profile-picture" src="<%= @user.photo %>" />
+      <div class="user-button user-container">
+        <div class="user-name"><%= @user.name %></div>
+        <div class="user-post-counter">Number of Posts: <%= @user.posts_counter %></div>
       </div>
     </section>
     <section>Bio: <%= @user.bio %></section>

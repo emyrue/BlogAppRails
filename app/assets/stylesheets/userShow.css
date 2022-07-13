@@ -1,0 +1,5 @@
+.user-container {
+  width: calc(98% - 100px);
+  display: flex;
+  align-items: center;
+}
