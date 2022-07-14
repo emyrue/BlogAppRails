@@ -8,6 +8,7 @@
       <div class="post-section-title"><%= @post.title %> by <%= @user.name %></div>
       <div class="post-text"><%= @post.text %></div>
       <div class="counters">Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></div>
+      <%= button_to 'Like', user_post_likes_path(@user, @post), method: :post %>
     </section>
     <section class="comments-section">
       <div class="comments-heading">Comments</div>
