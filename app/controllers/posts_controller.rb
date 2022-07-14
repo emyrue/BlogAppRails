@@ -21,7 +21,7 @@ class PostsController < ApplicationController
       redirect_to "/users/#{current_user.id}"
     else
       flash[:error] = "Post not saved"
-      render :new
+      redirect_to "/posts/new"
     end
   end
 end
