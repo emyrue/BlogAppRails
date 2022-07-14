@@ -11,9 +11,17 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new(author_id: current_user.id)
-    respond_to do |format|
-      format.html { render :new, locals: { post: @post } }
+    @post = Post.new
+  end
+
+  def create
+    @post = Post.new(author_id: current_user.id, title: params.require(:post).permit(:title)["title"], text: params.require(:post).permit(:text)["text"])
+    if @post.save
+      flash.now[:success] = "Post saved successfully"
+      render :new
+    else
+      flash.now[:error] = "Post not saved"
+      render :new
     end
   end
 end
