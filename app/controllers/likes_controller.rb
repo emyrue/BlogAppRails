@@ -2,6 +2,7 @@ class LikesController < ApplicationController
   def create
     find_post
     return if already_liked?
+
     @like = Like.new(author_id: current_user.id, post_id: @post.id)
     @like.save
     redirect_to "/users/#{params[:user_id]}/posts/#{params[:post_id]}"
