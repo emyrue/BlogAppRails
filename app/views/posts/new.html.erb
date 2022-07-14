@@ -1,5 +1,8 @@
 <h1>New Post</h1>
-<%= form_with model: @post, url: posts_path, method: :post, scope: :post do |f| %>
+<% flash.each do |key, message| %>
+  <div><%= message %></div>
+<% end %>
+<%= form_with model: @post, url: posts_path, local: true, method: :post, scope: :post do |f| %>
   <div>
     <%= f.label :title, "Title" %><br>
     <%= f.text_field :title %>
@@ -9,7 +12,4 @@
     <%= f.text_area :text %>
   </div>
   <%= f.submit "Create Post" %>
-<% end %>
-<% flash.each do |key, message| %>
-  <p><%= message %></p>
 <% end %>

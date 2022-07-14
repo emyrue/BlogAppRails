@@ -44,3 +44,9 @@
   border: 2px solid black;
   padding: 5px;
 }
+
+.success-message {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
