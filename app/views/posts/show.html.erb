@@ -16,6 +16,12 @@
         <span><%= @author.name %>:</span>
         <span><%= comment.text %></span><br/>
       <% end %>
-    <section>
+      <div class="add-comment-div">
+        <a href="<%= params[:id] %>/comments/new" class="add-comment" >Add Comment</a>
+      </div>
+    </section>
+    <% flash.each do |key, message| %>
+      <div class="success-message"><%= message %></div>
+    <% end %>
   </body>
 </html>

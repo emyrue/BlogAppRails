@@ -25,3 +25,8 @@
   font-size: 20px;
   margin-bottom: 20px;
 }
+
+.add-comment {
+  color: black;
+  text-decoration: underline;
+}
