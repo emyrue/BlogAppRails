@@ -15,13 +15,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(author_id: current_user.id, title: params.require(:post).permit(:title)["title"], text: params.require(:post).permit(:text)["text"])
+    @post = Post.new(author_id: current_user.id, title: params.require(:post).permit(:title)['title'],
+                     text: params.require(:post).permit(:text)['text'])
     if @post.save
-      flash[:notice] = "Post saved successfully"
+      flash[:notice] = 'Post saved successfully'
       redirect_to "/users/#{current_user.id}"
     else
-      flash[:error] = "Post not saved"
-      redirect_to "/posts/new"
+      flash[:error] = 'Post not saved'
+      redirect_to '/posts/new'
     end
   end
 end
