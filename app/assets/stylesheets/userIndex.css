@@ -46,3 +46,12 @@ a {
   right: 10px;
   font-size: 16px;
 }
+
+.add-post-div {
+  text-align: center;
+}
+
+.add-post {
+  color: black;
+  text-decoration: underline;
+}

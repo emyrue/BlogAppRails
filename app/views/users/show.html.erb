@@ -22,6 +22,9 @@
         <div class="counters">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></div>
       </section>
     <% end %>
+    <% flash.each do |key, message| %>
+      <div class="success-message"><%= message %></div>
+    <% end %>
     <a class="all-posts-link" href="<%= params[:id] %>/posts">
       <button class="all-posts-button">See all posts</button>
     </a>

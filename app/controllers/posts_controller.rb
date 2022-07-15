@@ -9,4 +9,20 @@ class PostsController < ApplicationController
     @user = User.find(@post.author_id)
     @comments = Comment.where(post_id: params[:id]).order(created_at: :desc)
   end
+
+  def new
+    @post = Post.new
+  end
+
+  def create
+    @post = Post.new(author_id: current_user.id, title: params.require(:post).permit(:title)['title'],
+                     text: params.require(:post).permit(:text)['text'])
+    if @post.save
+      flash[:notice] = 'Post saved successfully'
+      redirect_to "/users/#{current_user.id}"
+    else
+      flash[:error] = 'Post not saved'
+      redirect_to '/posts/new'
+    end
+  end
 end
