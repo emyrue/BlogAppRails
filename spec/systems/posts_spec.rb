@@ -53,7 +53,7 @@ RSpec.describe 'Posts', type: :system do
     end
 
     it 'has pagination button' do
-      expect
+      expect(page).to have_content('Pagination')
     end
   end
 end
