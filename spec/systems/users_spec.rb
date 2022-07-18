@@ -44,9 +44,11 @@ RSpec.describe 'Users', type: :system do
       @post = Post.create(author_id: @user.id, title: 'First post',
                           text: 'Yes, I\'m only a Bill.')
       @second_post = Post.create(author_id: @user.id, title: 'Second post',
-                          text: 'And I\'m sitting here on Capitol Hill.')
+                                 text: 'And I\'m sitting here on Capitol Hill.')
       @third_post = Post.create(author_id: @user.id, title: 'Third post',
-                          text: 'Well, it\'s a long, long journey to Capitol City.')
+                                text: 'Well, it\'s a long, long journey to Capitol City.')
+      @fourth_post = Post.create(author_id: @user.id, title: 'Fourth post',
+                                 text: 'It\'s a long, long wait while I\'m sitting in committee.')
       visit user_path(@user)
     end
 
@@ -56,11 +58,26 @@ RSpec.describe 'Users', type: :system do
     end
 
     it 'shows number of posts' do
-      expect(page).to have_content('Number of Posts: 3')
+      expect(page).to have_content('Number of Posts: 4')
     end
 
     it 'shows user\'s bio' do
       expect(page).to have_content(@user.bio)
+    end
+
+    it 'user\'s first three posts are shown' do
+      posts = page.all('.post-container')
+      expect(posts.size).to eq(3)
+    end
+
+    it 'redirects to post\'s show page' do
+      click_on 'And I\'m sitting here on Capitol Hill.'
+      expect(page).to have_current_path user_post_path(@user, @second_post)
+    end
+
+    it 'redirects to post\'s index page' do
+      first(:link, 'See all posts').click
+      expect(page).to have_current_path user_posts_path(@user)
     end
   end
 end
