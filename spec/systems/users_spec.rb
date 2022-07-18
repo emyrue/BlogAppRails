@@ -2,6 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'Users', type: :system do
   describe 'index page' do
+    before do
+      driven_by(:selenium_chrome_headless)
+    end
+
     before(:example) do
       @user = User.create(name: 'Bill',
                           photo: 'https://insidesources.com/wp-content/uploads/2015/08/130114152903-abc-schoolhouse-rock-just-a-bill-story-top-300x300.jpg',
@@ -37,6 +41,10 @@ RSpec.describe 'Users', type: :system do
   end
 
   describe 'show page' do
+    before do
+      driven_by(:selenium_chrome_headless)
+    end
+    
     before(:example) do
       @user = User.create(name: 'Bill',
                           photo: 'https://insidesources.com/wp-content/uploads/2015/08/130114152903-abc-schoolhouse-rock-just-a-bill-story-top-300x300.jpg',
