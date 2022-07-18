@@ -16,10 +16,14 @@ RSpec.describe 'Posts', type: :system do
       @post = Post.create(author_id: @user.id, title: 'First post',
                           text: 'Yes, I\'m only a Bill.')
       @first_comment = Comment.create(author_id: @second_user.id, post_id: @post.id, text: 'She\'s a galaxy girl.')
-      @second_comment = Comment.create(author_id: @second_user.id, post_id: @post.id, text: 'A solar system miss from a future world.')
-      @third_comment = Comment.create(author_id: @second_user.id, post_id: @post.id, text: 'She travels like a rocket through her comet team.')
-      @fourth_comment = Comment.create(author_id: @second_user.id, post_id: @post.id, text: 'There\'s never been a planet Janet hasn\'t seen.')
-      @fifth_comment = Comment.create(author_id: @second_user.id, post_id: @post.id, text: 'No, there\'s never been a planet Janet hasn\'t seen.')
+      @second_comment = Comment.create(author_id: @second_user.id, post_id: @post.id,
+                                       text: 'A solar system miss from a future world.')
+      @third_comment = Comment.create(author_id: @second_user.id, post_id: @post.id,
+                                      text: 'She travels like a rocket through her comet team.')
+      @fourth_comment = Comment.create(author_id: @second_user.id, post_id: @post.id,
+                                       text: 'There\'s never been a planet Janet hasn\'t seen.')
+      @fifth_comment = Comment.create(author_id: @second_user.id, post_id: @post.id,
+                                      text: 'No, there\'s never been a planet Janet hasn\'t seen.')
       visit user_posts_path(@user)
     end
 
@@ -82,10 +86,14 @@ RSpec.describe 'Posts', type: :system do
       @post = Post.create(author_id: @user.id, title: 'First post',
                           text: 'Yes, I\'m only a Bill.')
       @first_comment = Comment.create(author_id: @second_user.id, post_id: @post.id, text: 'She\'s a galaxy girl.')
-      @second_comment = Comment.create(author_id: @second_user.id, post_id: @post.id, text: 'A solar system miss from a future world.')
-      @third_comment = Comment.create(author_id: @second_user.id, post_id: @post.id, text: 'She travels like a rocket through her comet team.')
-      @fourth_comment = Comment.create(author_id: @second_user.id, post_id: @post.id, text: 'There\'s never been a planet Janet hasn\'t seen.')
-      @fifth_comment = Comment.create(author_id: @second_user.id, post_id: @post.id, text: 'No, there\'s never been a planet Janet hasn\'t seen.')
+      @second_comment = Comment.create(author_id: @second_user.id, post_id: @post.id,
+                                       text: 'A solar system miss from a future world.')
+      @third_comment = Comment.create(author_id: @second_user.id, post_id: @post.id,
+                                      text: 'She travels like a rocket through her comet team.')
+      @fourth_comment = Comment.create(author_id: @second_user.id, post_id: @post.id,
+                                       text: 'There\'s never been a planet Janet hasn\'t seen.')
+      @fifth_comment = Comment.create(author_id: @second_user.id, post_id: @post.id,
+                                      text: 'No, there\'s never been a planet Janet hasn\'t seen.')
       visit user_post_path(@user, @post)
     end
 

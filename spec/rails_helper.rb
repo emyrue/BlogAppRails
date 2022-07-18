@@ -70,10 +70,10 @@ RSpec.configure do |config|
         args: %w[headless enable-features=NetworkService,NetworkServiceInProcess]
       }
     )
-  
+
     Capybara::Selenium::Driver.new app,
-      browser: :chrome,
-      desired_capabilities: capabilities
+                                   browser: :chrome,
+                                   desired_capabilities: capabilities
   end
   Capybara.default_driver = :selenium_chrome_headless
 end
