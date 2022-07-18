@@ -20,8 +20,12 @@ To get a local copy up and running follow these simple example steps.
 ### Running Tests
 
 Run the following commands in your terminal:
-- bundle install
-- rspec
+```
+bundle install
+```
+```
+rspec
+```
 
 ## Authors
 

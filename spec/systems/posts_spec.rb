@@ -55,5 +55,11 @@ RSpec.describe 'Posts', type: :system do
     it 'has pagination button' do
       expect(page).to have_content('Pagination')
     end
+
+    it 'redirects to the post show page when clicking on the title' do
+      click_link(@post.title)
+      expect(page).to have_current_path user_post_path(@user, @post)
+      expect(page).to have_content(@post.title)
+    end
   end
 end
