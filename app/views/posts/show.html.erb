@@ -2,13 +2,12 @@
   <div class="post-section-title"><%= @post.title %> by <%= @user.name %></div>
   <div class="post-text"><%= @post.text %></div>
   <div class="counters">Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></div>
-  <%= button_to 'Like', user_post_likes_path(@user, @post), method: :post %>
+  <%= button_to 'Like', user_post_likes_path(@post.author, @post), method: :post %>
 </section>
 <section class="comments-section">
   <div class="comments-heading">Comments</div>
-  <% @comments.each do |comment| %>
-    <% @author = User.find(comment.author_id) %>
-    <span><%= @author.name %>:</span>
+  <% @post.comments.includes(:author).each do |comment| %>
+    <span><%= comment.author.name %>:</span>
     <span><%= comment.text %></span><br/>
   <% end %>
   <div class="add-comment-div">
