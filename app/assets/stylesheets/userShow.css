@@ -20,6 +20,10 @@
   margin-bottom: 10px;
 }
 
+a {
+  color: black;
+}
+
 .post-container {
   margin: 20px;
   border: 2px solid black;
