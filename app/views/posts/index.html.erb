@@ -5,7 +5,7 @@
     <div class="user-post-counter">Number of Posts: <%= @user.posts_counter %></div>
   </div>
 </section>
-<% @all_posts.each do |post| %>
+<% @user.posts.each do |post| %>
   <a class="post-link" href="posts/<%= post.id %>">
     <button class="post-button">
       <div class="post-info">
