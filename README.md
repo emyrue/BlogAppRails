@@ -16,6 +16,8 @@ To get a local copy up and running follow these simple example steps.
 - Type the following commands into your terminal:
     - git clone git@github.com:emyrue/BlogAppRails.git
     - cd BlogAppRails
+    - rails db:create
+    - rails db:migrate
 
 ### Running Tests
 
