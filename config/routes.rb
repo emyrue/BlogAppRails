@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 
   resources :posts, only: [:new, :create]
 
-  root to: "home#index"
+  root to: "users#index"
 end
