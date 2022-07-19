@@ -76,3 +76,5 @@ end
 gem 'rails-controller-testing'
 
 gem 'bullet'
+
+gem 'devise'
