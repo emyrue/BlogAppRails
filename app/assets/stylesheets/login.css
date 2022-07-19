@@ -1,0 +1,8 @@
+.log-out {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 5px;
+  border: 2px solid black;
+  background-color: lightgray;
+}
