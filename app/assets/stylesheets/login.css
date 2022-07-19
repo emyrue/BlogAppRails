@@ -1,0 +1,50 @@
+.log-out {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 5px;
+  border: 2px solid black;
+  background-color: lightgray;
+}
+
+.log-in-heading {
+  display: flex;
+  justify-content: center;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  font-size: 20px;
+  align-items: center;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.log-in {
+  width: 90%;
+  padding: 5px;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  background-color: lightgray;
+}
+
+.sign-in-field {
+  width: 90%;
+  padding: 5px;
+  border: 2px solid black;
+}
+
+.center {
+  display: flex;
+}

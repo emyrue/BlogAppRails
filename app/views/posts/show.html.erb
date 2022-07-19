@@ -17,3 +17,4 @@
 <% flash.each do |key, message| %>
   <div class="success-message"><%= message %></div>
 <% end %>
+<%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "log-out" %>
