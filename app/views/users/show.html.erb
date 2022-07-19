@@ -10,11 +10,13 @@
 <div><%= @user.bio %></div>
 </section>
 <% @posts.each do |post| %>
-  <section class="post-container">
-    <div class="post-title"><%= post.title %></div>
-    <div><%= post.text %></div>
-    <div class="counters">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></div>
-  </section>
+  <a href=<%= user_post_path(@user, post) %>>
+    <section class="post-container">
+      <div class="post-title"><%= post.title %></div>
+      <div><%= post.text %></div>
+      <div class="counters">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></div>
+    </section>
+  </a>
 <% end %>
 <% flash.each do |key, message| %>
   <div class="success-message"><%= message %></div>

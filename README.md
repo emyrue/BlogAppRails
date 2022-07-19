@@ -16,12 +16,18 @@ To get a local copy up and running follow these simple example steps.
 - Type the following commands into your terminal:
     - git clone git@github.com:emyrue/BlogAppRails.git
     - cd BlogAppRails
+    - rails db:create
+    - rails db:migrate
 
 ### Running Tests
 
 Run the following commands in your terminal:
-- bundle install
-- rspec
+```
+bundle install
+```
+```
+rspec
+```
 
 ## Authors
 
@@ -30,6 +36,13 @@ Run the following commands in your terminal:
 - GitHub: [@emyrue](https://github.com/emyrue)
 - Twitter: [@EmyrueRobertson](https://twitter.com/EmyrueRobertson)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/emilyruthrobertson/)
+
+## Collaborators
+
+👤 **Augusto Galindo**
+
+- GitHub: [@jsug9](https://github.com/jsug9)
+- LinkedIn: [Augusto Galindo](https://www.linkedin.com/in/augustogalindo/)
 
 ## 🤝 Contributing
 
