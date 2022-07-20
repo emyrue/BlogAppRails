@@ -7,8 +7,13 @@
 <section class="comments-section">
   <div class="comments-heading">Comments</div>
   <% @post.comments.includes(:author).order(created_at: :desc).each do |comment| %>
-    <span><%= comment.author.name %>:</span>
-    <span><%= comment.text %></span><br/>
+    <div class="div-with-delete">
+      <span><%= comment.author.name %>:</span>
+      <span><%= comment.text %></span><br/>
+      <% if can? :manage, comment %>
+        <%= button_to "Delete Comment", user_post_comment_path(@post.author, @post, comment), method: :delete, class: "delete-comment" %>
+      <% end %>
+    </div>
   <% end %>
   <div class="add-comment-div">
     <a href="<%= params[:id] %>/comments/new" class="add-comment" >Add Comment</a>

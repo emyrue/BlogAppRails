@@ -14,4 +14,10 @@ class CommentsController < ApplicationController
       redirect_to "/users/#{params[:user_id]}/posts/#{params[:post_id]}/comments/new"
     end
   end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to root_path
+  end
 end
