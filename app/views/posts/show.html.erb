@@ -13,6 +13,8 @@
       <% if can? :manage, comment %>
         <%= button_to "Delete Comment", user_post_comment_path(@post.author, @post, comment), method: :delete, class: "delete-comment" %>
       <% end %>
+      <br/>
+      <hr/>
     </div>
   <% end %>
   <div class="add-comment-div">
