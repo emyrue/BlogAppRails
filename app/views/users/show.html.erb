@@ -17,6 +17,9 @@
       <div class="counters">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></div>
     </section>
   </a>
+  <% if can? :manage, post %>
+    <%= button_to "Delete Post", post_path(post.id), method: :delete, class: "delete-post" %>
+  <% end %>
 <% end %>
 <%= flash[:notice] %>
 <a class="all-posts-link" href="<%= params[:id] %>/posts">
