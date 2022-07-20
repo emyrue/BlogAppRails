@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
 
   def index
     @user = User.includes(:posts).find(params[:user_id])
@@ -23,5 +24,11 @@ class PostsController < ApplicationController
       flash[:error] = 'Post not saved'
       redirect_to '/posts/new'
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to root_path
   end
 end

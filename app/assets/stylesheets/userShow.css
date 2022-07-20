@@ -54,3 +54,16 @@ a {
   width: 100%;
   margin-bottom: 20px;
 }
+
+.section-with-delete {
+  position: relative;
+}
+
+.delete-post {
+  position: absolute;
+  right: 40px;
+  top: 30px;
+  border: 2px solid black;
+  background-color: lightgray;
+  padding: 10px;
+}

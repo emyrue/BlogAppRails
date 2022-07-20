@@ -4,7 +4,8 @@
 
 .post-button {
   background: white;
-  margin: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
   width: calc(100% - 40px);
   border: 2px solid black;
   padding: 0;
@@ -24,6 +25,11 @@
   padding: 20px;
   text-align: left;
   font-size: 15px;
+  border: 2px solid black;
+  border-top: none;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .pagination {
@@ -31,4 +37,17 @@
   border: 2px solid black;
   padding: 5px;
   margin-left: calc(50% - 63px);
+}
+
+.div-with-delete {
+  position: relative;
+}
+
+.delete-comment {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 2px;
+  background-color: lightgray;
+  border: 2px solid black;
 }

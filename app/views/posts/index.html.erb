@@ -6,24 +6,33 @@
   </div>
 </section>
 <% @user.posts.each do |post| %>
-  <a class="post-link" href="posts/<%= post.id %>">
-    <button class="post-button">
-      <div class="post-info">
-        <div class="post-title"><%= post.title %></div>
-        <div><%= post.text %></div>
-        <div class="counters">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter%></div>
-      </div>
-      <hr/>
-      <div class="comments-info">
-        <% @comments = post.most_recent_comments %>
-        <% @comments.each do |comment| %>
+  <button class="post-button">
+    <section class="section-with-delete">
+      <a class="post-link" href="posts/<%= post.id %>">
+        <div class="post-info">
+          <div class="post-title"><%= post.title %></div>
+          <div><%= post.text %></div>
+          <div class="counters">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter%></div>
+        </div>
+        <% if can? :manage, post %>
+          <%= button_to "Delete Post", post_path(post.id), method: :delete, class: "delete-post" %>
+        <% end %>
+      </a>
+    </section>
+    <div class="comments-info">
+      <% @comments = post.most_recent_comments %>
+      <% @comments.each do |comment| %>
+        <div class="div-with-delete">
           <% @author = User.find(comment.author_id) %>
           <span><%= @author.name %>:</span>
           <span><%= comment.text %></span><br/>
-        <% end %>
-      </div>
-    </button>
-  </a>
+          <% if can? :manage, comment %>
+            <%= button_to "Delete Comment", user_post_comment_path(@user, post, comment), method: :delete, class: "delete-comment" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </button>
 <% end %>
 <button class="pagination">Pagination</button>
 <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "log-out" %>
