@@ -6,6 +6,7 @@
   </div>
 </section>
 <% @user.posts.each do |post| %>
+<section class="section-with-delete">
   <a class="post-link" href="posts/<%= post.id %>">
     <button class="post-button">
       <div class="post-info">
@@ -27,6 +28,7 @@
   <% if can? :manage, post %>
     <%= button_to "Delete Post", post_path(post.id), method: :delete, class: "delete-post" %>
   <% end %>
+</section>
 <% end %>
 <button class="pagination">Pagination</button>
 <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "log-out" %>

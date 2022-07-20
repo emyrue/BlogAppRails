@@ -10,6 +10,7 @@
 <div><%= @user.bio %></div>
 </section>
 <% @posts.each do |post| %>
+<section class="section-with-delete">
   <a href=<%= user_post_path(@user, post) %>>
     <section class="post-container">
       <div class="post-title"><%= post.title %></div>
@@ -20,6 +21,7 @@
   <% if can? :manage, post %>
     <%= button_to "Delete Post", post_path(post.id), method: :delete, class: "delete-post" %>
   <% end %>
+</section>
 <% end %>
 <%= flash[:notice] %>
 <a class="all-posts-link" href="<%= params[:id] %>/posts">
