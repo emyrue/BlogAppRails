@@ -13,7 +13,7 @@ class AuthenticateUser
   attr_reader :email, :password
 
   def user
-    user = User.find_by(email:)
+    user = User.find_by(email: :email)
     return user if user&.valid_password?(password)
   end
 end

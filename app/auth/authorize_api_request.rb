@@ -6,7 +6,7 @@ class AuthorizeApiRequest
   end
 
   def call
-    { user: }
+    { user: user }
   end
 
   private
