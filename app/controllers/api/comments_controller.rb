@@ -7,6 +7,7 @@ class Api::CommentsController < ApplicationController
   def create
     @user = current_user
     @comment = @user.comment.new(comment_params)
+    @comment.author_id = @user.id
     @comment.post_id = params[:post_id]
     response = {comment: @comment} if @comment.save
     json_response(response)
