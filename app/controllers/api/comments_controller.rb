@@ -1,21 +1,20 @@
 class Api::CommentsController < ApplicationController
   def index
-    @post = Post.includes(:comments).find(params[:post_id])
+    @post = Post.find(params[:post_id])
     render :json => @post.comments
   end
 
   def create
-    @comment = Comment.new(comment_params)
-    if @comment.save
-      puts "saved"
-    else
-      puts "not saved"
-    end
+    @user = current_user
+    @comment = @user.comment.new(comment_params)
+    @comment.post_id = params[:post_id]
+    response = {comment: @comment} if @comment.save
+    json_response(response)
   end
 
   private
 
   def comment_params
-    params.require(:comment).permit(:author_id, :post_id, :text)
+    params.permit(:post_id, :text)
   end
 end
