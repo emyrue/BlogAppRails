@@ -84,3 +84,5 @@ gem 'bullet'
 gem 'devise'
 
 gem 'cancancan'
+
+gem 'rswag'
