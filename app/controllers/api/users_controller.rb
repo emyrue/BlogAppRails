@@ -3,12 +3,12 @@ class Api::UsersController < ApplicationController
 
   def index
     @users = User.all
-    render :json => @users
+    render json: @users
   end
 
   def show
     @user = User.find(params[:id])
-    render :json => @user
+    render json: @user
   end
 
   def create
@@ -19,7 +19,7 @@ class Api::UsersController < ApplicationController
   end
 
   private
-  
+
   def user_params
     params.permit(
       :name,
