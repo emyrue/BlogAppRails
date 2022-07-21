@@ -14,6 +14,6 @@ class AuthenticateUser
 
   def user
     user = User.find_by(email: :email)
-    return user if user&.valid_password?(password)
+    return user if user&.valid_password?(:password)
   end
 end
