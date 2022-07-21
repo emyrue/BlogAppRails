@@ -14,13 +14,19 @@ class Api::UsersController < ApplicationController
   def create
     user = User.create!(user_params)
     auth_token = AuthenticateUser.new(user.email, user.password).call
-    response = {auth_token: auth_token}
-    json_response(response, :created)
+    response = { auth_token: auth_token }
+    json_response(response)
   end
 
   private
   
   def user_params
-    params.permit(:name, :email, :photo, :bio, :password, :password_confirmation)
+    params.permit(
+      :name,
+      :email,
+      :bio,
+      :password,
+      :password_confirmation
+    )
   end
 end
