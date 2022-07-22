@@ -7,12 +7,20 @@ RSpec.describe 'Users', type: :system do
     end
 
     before(:example) do
-      @user = User.create(name: 'Bill',
+      @user = User.new(name: 'Bill',
                           photo: 'https://insidesources.com/wp-content/uploads/2015/08/130114152903-abc-schoolhouse-rock-just-a-bill-story-top-300x300.jpg',
-                          bio: 'I\'m just a Bill.')
-      @second_user = User.create(name: 'Interplanet Janet',
+                          bio: 'I\'m just a Bill.',
+                          email: 'justabill@gmail.com',
+                          password: 'committee')
+      @user.skip_confirmation!
+      @user.save!
+      @second_user = User.new(name: 'Interplanet Janet',
                                  photo: 'http://cdn.shopify.com/s/files/1/0253/8910/5237/products/SHR-3_ABC_SchoolHouseRock_NL3900_Turquoise_RO_1200x1200.jpg?v=1592229612',
-                                 bio: 'I\'m a galaxy girl')
+                                 bio: 'I\'m a galaxy girl',
+                                 email: 'interplanetjanet@gmail.com',
+                                 password: 'solarsystemmiss')
+      @second_user.skip_confirmation!
+      @second_user.save!
       @post = Post.create(author_id: @user.id, title: 'Yes, I\'m only a Bill.',
                           text: 'And I\'m sitting here on Capitol Hill.')
       visit users_path
@@ -46,9 +54,13 @@ RSpec.describe 'Users', type: :system do
     end
 
     before(:example) do
-      @user = User.create(name: 'Bill',
+      @user = User.new(name: 'Bill',
                           photo: 'https://insidesources.com/wp-content/uploads/2015/08/130114152903-abc-schoolhouse-rock-just-a-bill-story-top-300x300.jpg',
-                          bio: 'I\'m just a Bill.')
+                          bio: 'I\'m just a Bill.',
+                          email: 'justabill@gmail.com',
+                          password: 'committee')
+      @user.skip_confirmation!
+      @user.save!
       @post = Post.create(author_id: @user.id, title: 'First post',
                           text: 'Yes, I\'m only a Bill.')
       @second_post = Post.create(author_id: @user.id, title: 'Second post',
